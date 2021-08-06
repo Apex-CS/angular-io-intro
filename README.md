@@ -9,7 +9,9 @@ This project is going to consist in a mini application that consumes a 3rd party
 - Create an api key to consume the api and replace this api key inside the `.env` file (pokemonApiKey variable)
   - https://dev.pokemontcg.io/  
 - (optional) Install Angular dev tools (could be installed on every browser based on chromium): https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh
-- Then run `npm start`, go to `localhost:4200` and you will see a `hello world` message.
+- run `npm install`
+- run `npm start`
+- go to `localhost:4200` and you will see a `hello world` message.
 
 
 
