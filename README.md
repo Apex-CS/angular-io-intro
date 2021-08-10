@@ -4,7 +4,8 @@ This project is going to consist in a mini application that consumes a 3rd party
 #### Note: this branch contains the seed files that will be needed in the following sessions.
 
 ### First steps
-
+- Install angular cli `npm install -g @angular/cli`
+- Clone this repo 
 - Create a new `.env` file based on the `env_example`
 - Create an api key to consume the api and replace this api key inside the `.env` file (pokemonApiKey variable)
   - https://dev.pokemontcg.io/  
