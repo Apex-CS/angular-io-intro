@@ -1,3 +1,3 @@
-pokemonApiKey="api-key"
+pokemonApiKey="api-key",
 production=false,
 NODE_ENV=""development""
