@@ -1,1 +1,6 @@
-<p>No Results</p>
+<div class="main-content--layout">
+    <ng-container *ngIf="pokemonData?.count">
+        <app-card-item *ngFor="let cardInfo of pokemonData?.data; trackBy: trackByFn" [pokemonInfo]="cardInfo">
+        </app-card-item>
+    </ng-container>
+</div>

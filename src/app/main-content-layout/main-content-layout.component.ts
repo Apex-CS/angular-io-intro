@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import PokemonCard from '../interfaces/PokemonCard';
+import PokemonPageData from '../interfaces/PokemonPageData';
 
 @Component({
   selector: 'app-main-content-layout',
@@ -8,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class MainContentLayoutComponent implements OnInit {
 
   constructor() { }
+  @Input() pokemonData: PokemonPageData | null = null;
 
   ngOnInit(): void {
   }
 
+  trackByFn(index: number, item: PokemonCard) {
+    return item?.id;
+  }
 }

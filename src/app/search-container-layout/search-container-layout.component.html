@@ -4,31 +4,27 @@
     </div>
     <div class="search-container--body">
         <div class="search-container--input">
-            <input type="text"/>
+            <input type="text" [(ngModel)]="searchText"/>
         </div>
         <div class="search-container--filters">
             <div class="search-container--filters-items">
                 <div>
                     Sort by name
-                    <select name="sort-by-name" id="sort-by-name">
-                        <option value="N/A">N/A</option>
-                        <option value="ASC">ASC</option>
-                        <option value="DESC">DESC</option>
+                    <select [compareWith]="compareFn" name="sort-by-name" id="sort-by-name" [(ngModel)]="orderByName">
+                        <option [ngValue]="sortItem" *ngFor="let sortItem of sortOptions; trackBy: trackBySortItem">{{sortItem.value}}</option>
                     </select>
                 </div>
                 <div>
                     Sort by number
-                    <select name="sort-by-number" id="sort-by-number">
-                        <option value="N/A">N/A</option>
-                        <option value="ASC">ASC</option>
-                        <option value="DESC">DESC</option>
+                    <select [compareWith]="compareFn" name="sort-by-number" id="sort-by-number" [(ngModel)]="orderByNumber">
+                        <option [ngValue]="sortItem" *ngFor="let sortItem of sortOptions; trackBy: trackBySortItem">{{sortItem.value}}</option>
                     </select>
                 </div>
                 <div>
-                    <span>Only original 151 pokémon </span><input type="checkbox"/>
+                    <span>Only original 151 pokémon </span><input type="checkbox" [(ngModel)]="originalPokemon"/>
                 </div>
             </div>
-            <button>Search</button>
+            <button (click)="searchCards()">Search</button>
         </div>
     </div>
 </div>

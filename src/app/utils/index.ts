@@ -1,7 +1,6 @@
 import CardSearchData from "../interfaces/CardSearchEvent";
 
 export const trasnformFiltersIntoQueryString = (cardData: CardSearchData): string => {
-    const bannedCards = cardData.banned ? " legalities.unlimited:banned" : "";
     const originalPokemon = cardData.originalPokemon ? " nationalPokedexNumbers:[1 TO 151]" : "";
     const sortArr = [];
     const sortByNameOrder = cardData.orderByName === "N/A" ? "" : cardData.orderByName === "ASC" ? "name" : "-name";
@@ -17,5 +16,5 @@ export const trasnformFiltersIntoQueryString = (cardData: CardSearchData): strin
 
     const sortQuery = sortArr.length > 0 ? `&orderBy=${sortArr.join(",")}` : "";
 
-    return `?q=name:${cardData.text}*${bannedCards}${originalPokemon}${sortQuery}&pageSize=25`;
+    return `?q=name:${cardData.text}${originalPokemon}${sortQuery}&pageSize=25`;
 }
